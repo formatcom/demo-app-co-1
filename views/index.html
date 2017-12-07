@@ -1,0 +1,63 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-init="open=false" ng-click="open=!open">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#/">Rumours</a>
+
+    <form class="navbar-form navbar-left hidden-sm hidden-xs">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="search.cedula" placeholder="Buscar por ID" >
+      </div>
+    </form>
+
+  </div>
+
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse" ng-class="{'in': open}">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#/">Inicio</a></li>
+      <li><a href="#/create">Crear Entrada</a></li>
+      <li><a href="#/logout">Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Lista de registros</h2>
+  <select ng-model="event" ng-change="changeEvent()">
+    <option value="0">RUMOURS BEACH CARTAGENA 2017</option>
+    <option value="1">RUMOURS FESTIVAL CARTAGENA 2017</option>
+  </select>
+  <p>Aqui se puede ver el historico de pedidos</p>            
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Nombre Completo</th>
+        <th>ID</th>
+        <th class="hidden-sm hidden-xs">Ciudad</th>
+        <th class="hidden-sm hidden-xs">País</th>
+        <th class="hidden-sm hidden-xs">Membresía</th>
+        <th class="text-right">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="ticket in tickets | filter: search">
+        <td>{{ticket.nombre}}</td>
+        <td>{{ticket.cedula}}</td>
+        <td class="hidden-sm hidden-xs">{{ticket.ciudad}}</td>
+        <td class="hidden-sm hidden-xs">{{ticket.pais}}</td>
+        <td class="hidden-sm hidden-xs">{{ticket.membresia}}</td>
+        <td class="text-right">
+          <a class="btn btn-info" href="#/view/{{ticket.$id}}">Info</a>
+          <a class="btn btn-info" href="#/edit/{{ticket.$id}}">Editar</a>
+          <a class="btn btn-info" target="_blank" href="#/pdf/{{ticket.$id}}">pdf</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

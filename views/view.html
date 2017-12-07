@@ -1,0 +1,84 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" ng-init="open=false" ng-click="open=!open">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#/">Rumours</a>
+  </div>
+
+  <div class="collapse navbar-collapse navbar-ex1-collapse" ng-class="{'in': open}">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#/">Inicio</a></li>
+      <li><a href="#/create">Crear Entrada</a></li>
+      <li><a href="#/logout">Salir</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <table class="table table-striped">
+    <tr>
+      <td>Nombre Completo</td>
+      <td>{{ticket.nombre}}</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>{{ticket.cedula}}</td>
+    </tr>
+    <tr>
+      <td>Dirección</td>
+      <td>{{ticket.direccion}}</td>
+    </tr>
+    <tr>
+      <td>Ciudad</td>
+      <td>{{ticket.ciudad}}</td>
+    </tr>
+    <tr>
+      <td>País</td>
+      <td>{{ticket.pais}}</td>
+    </tr>
+    <tr>
+      <td>Celular</td>
+      <td>{{ticket.celular}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ticket.email}}</td>
+    </tr>
+    <tr>
+      <td>Promotor</td>
+      <td>{{ticket.promotor}}</td>
+    </tr>
+    <tr>
+      <td>Tipo/Pago</td>
+      <td>{{ticket.tipo}}</td>
+    </tr>
+    <tr>
+      <td>Fecha</td>
+      <td>{{ticket.fecha}}</td>
+    </tr>
+    <tr>
+      <td>Valor</td>
+      <td>{{ticket.valor}}</td>
+    </tr>
+    <tr>
+      <td>Moneda</td>
+      <td>{{ticket.moneda}}</td>
+    </tr>
+    <tr>
+      <td>Membresía</td>
+      <td>{{ticket.membresia}}</td>
+    </tr>
+    <tr>
+      <td>Observación</td>
+      <td>{{ticket.observacion}}</td>
+    </tr>
+  </table>
+  <div class="pull-right" style="padding-bottom: 25px">
+    <a ng-if="ticket.disable" class="btn btn-info" href="#/enable/{{ticket.$id}}">re-Activar qr</a>
+    <a class="btn btn-info" target="_blank" href="#/pdf/{{ticket.$id}}">pdf</a>
+  </div>
+</div>

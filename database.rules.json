@@ -1,0 +1,12 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": "auth != null",
+    "tickets": {
+      ".indexOn": [
+        "_user",
+        "_event"
+      ]
+    }
+  }
+}

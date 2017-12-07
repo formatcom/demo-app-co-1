@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div style="width:100%; height: 50px; margin: 10px auto" class="bg-success" ng-class="{'bg-danger': ticket.disable && _disable}"></div>
+
+  <table class="table table-striped">
+    <tr>
+      <td>Nombre Completo</td>
+      <td>{{ticket.nombre}}</td>
+    </tr>
+    <tr>
+      <td>ID</td>
+      <td>{{ticket.cedula}}</td>
+    </tr>
+    <tr>
+      <td>Fecha</td>
+      <td>{{ticket.fecha}}</td>
+    </tr>
+    <tr>
+      <td>Membresía</td>
+      <td>{{ticket.membresia}}</td>
+    </tr>
+  </table>
+  <a ng-if="ticket && !ticket.disable" class="btn btn-info" href="#/disable/{{ticket.$id}}">Validar</a>
+</div>

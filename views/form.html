@@ -1,0 +1,109 @@
+<style>
+  .lx-date-picker__current-day-of-week span {
+     font-size: 14px;
+  }
+  .notification__icon{
+     font-size: 14px;
+  }
+  .lx-date-picker__nav span{
+     font-size: 14px;
+  }
+
+  .lx-date-picker__day a{
+    font-size: 12px;
+  }
+  .lx-date-picker__days-of-week span{
+    font-size: 12px;
+  }
+</style>
+
+
+<div class="col-lg-12">
+  <lx-text-field label="Nombre Completo" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.nombre">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="ID" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.cedula">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Dirección" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.direccion">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Ciudad" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.ciudad">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="País" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.pais">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Celular" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.celular">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Email" lx-allow-clear="true">
+    <input required type="email" ng-model="$parent.ticket.email">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Promotor" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.promotor">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Tipo/Pago" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.tipo">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-date-picker model="$parent._date" label="Fecha" id="fecha" locale="es" allow-clear="true"></lx-date-picker>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Valor" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.valor">
+  </lx-text-field>
+</div>
+<div class="col-lg-12">
+  <lx-text-field label="Moneda" lx-allow-clear="true">
+    <input required type="text" ng-model="$parent.ticket.moneda">
+  </lx-text-field>
+</div>
+
+<style>
+  .dropdown-link {
+    font-size: 15px !important;
+  }
+  .lx-select__selected--placeholder{
+    font-weight: bold !important;
+  }
+  .lx-select__floating-label{
+    color: black !important;
+  }
+</style>
+
+
+<div class="col-lg-12">
+  <lx-select ng-model="$parent.ticket.membresia" floating-label placeholder="Membresía" choices="membresias">
+    <lx-select-selected>
+      {{ $selected }}
+    </lx-select-selected>
+
+    <lx-select-choices>
+      {{ $choice }}
+    </lx-select-choices>
+  </lx-select>
+</div>
+
+<div class="col-lg-12">
+  <lx-text-field label="Observación" lx-allow-clear="true">
+    <textarea required type="text" ng-model="$parent.ticket.observacion"></textarea>
+  </lx-text-field>
+</div>

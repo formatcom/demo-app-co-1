@@ -1,0 +1,58 @@
+<style>
+  body {
+    font-family: "Segoe UI Light","Segoe UI","Segoe WP","Helvetica Neue",sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.428571429 !important;
+    color: #333 !important;
+    background-color: #fff !important;
+  }
+  ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+  }
+</style>
+
+<section>
+  <header>
+    <img src="{{_cache}}/assets/img/event/{{ticket._event}}.png" />
+  </header>
+  <div style="display: flex">
+    <div style="margin-top: 8px; width: 290px; overflow: hidden">
+      <ul>
+        <li><strong>NOMBRE</strong>  {{ticket.nombre}}</li>
+        <li><strong>ID</strong>      {{ticket.cedula}}</li>
+        <li><strong>DIRECCIÓN</strong> {{ticket.direccion}}</li>
+        <li><strong>CIUDAD</strong> {{ticket.ciudad}}</li>
+        <li><strong>PAÍS</strong> {{ticket.pais}}</li>
+        <li><strong>CELULAR</strong> {{ticket.celular}}</li>
+        <li><strong>EMAIL</strong> {{ticket.email}}</li>
+        <li><strong>TIPO/PAGO</strong> {{ticket.tipo}}</li>
+      </ul>
+      <br />
+      <ul>
+        <li><strong>FECHA</strong> {{ticket.fecha}}</li>
+        <li><strong>VALOR</strong> {{ticket.valor}}</li>
+        <li><strong>MONEDA</strong> {{ticket.moneda}}</li>
+      </ul>
+      <ul>
+        <li><strong>OBSERVACIÓN</strong> 
+        <br/>{{ticket.observacion}}</li>
+      </ul>
+
+    </div>
+    <div style="margin-top: 75px; margin-left: 77px">
+
+      <strong style="font-size: 10px">REF: {{ticket.$id}}</strong>
+      <div generate-qr text={{textqr}}></div>
+
+    </div>
+  </div>
+  <footer>
+    <img src="{{_cache}}/assets/img/{{ticket.membresia}}.png" />
+  </footer>
+<section>
